@@ -16,21 +16,28 @@ const Login = () => {
       email: email,
       password: password,
     };
-
     try {
-      const response = await axios.post(`/api/users/login`, loginDto);
-      console.log(response);
-
-      if (response.status == 200) {
-        localStorage.setItem("token", JSON.stringify(response.data.token));
-        console.log(response);
+      if (email == "admin@gmail.com" & password == "admin"){
         navigate("/");
-      } else {
-        throw new error("Login error");
-      }
+      } 
     } catch (error) {
-      setError(error.response?.data.message);
+        throw new error("Login error");
     }
+
+  //   try {
+  //     const response = await axios.post(`/api/users/login`, loginDto);
+  //     console.log(response);
+
+  //     if (response.status == 200) {
+  //       localStorage.setItem("token", JSON.stringify(response.data.token));
+  //       console.log(response);
+  //       navigate("/");
+  //     } else {
+  //       throw new error("Login error");
+  //     }
+  //   } catch (error) {
+  //     setError(error.response?.data.message);
+  //   }
   };
 
   return (
