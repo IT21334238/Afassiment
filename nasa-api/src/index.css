@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+img {
+  max-width: 100%;
+  width: 100%;
+} 
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply bg-gradient-to-br from-stone-900 to-slate-900;  
+}
+
+nav ul {
+  @apply lg:flex lg:items-center lg:justify-center lg:gap-3;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.btn {
+  @apply py-2 px-8 border-white border-2 bg-transparent text-white transition-all duration-200;
+}
+
+.heading {
+  @apply text-white font-bold text-4xl md:text-5xl xl:text-6xl;
+}
+
+p {
+  @apply text-sm;
+  line-height: 1.8;
+}
+
+.showcase {
+  background: url("./space_img2.jpg") no-repeat center/cover;
+  height: calc(100vh - 0.1px);
+}
+
+.showcase .overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: calc(100vh - 0.1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articles {
+  @apply bg-stone-900 p-5 rounded-lg shadow shadow-zinc-800 text-white text-sm;
+}
+
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.spinner article {
+  width: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  border: 2px solid #98e2cb21;
+  border-top-color: #10b581;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.map-container {
+  position: relative;
+}
+
+.map {
+  width: 60%; /* Adjust as needed */
+  height: 100vh;
+  border: 3.5px solid #ffffff
+}
+
+/* .map-container .location-info {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} */
+
+
+
+
+.location-icon {
+  font-size: 20px;
+  color: red;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.location-info {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  width: 400px;
+  min-height: 200px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.location-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.location-info li {
+  padding: 5px 0;
+}
+
+.home {
+  @apply bg-gradient-to-br from-stone-900 to-slate-900; 
+}
+
+.selected-image-wrapper {
+  border-bottom: 3px solid #676767; /* Add underline border */
+}
