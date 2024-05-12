@@ -3,12 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { SiNasa } from "react-icons/si";
 
 export default function Header() {
-  const token = JSON.parse(localStorage.getItem("token"));
   let navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const logout = async () => {
-    localStorage.removeItem("token");
     navigate("/login");
   };
 
@@ -23,7 +21,7 @@ export default function Header() {
         </div>
 
         <div className="flex items-center">
-          {(token && !menuOpen) && (
+          {( !menuOpen) && (
             <nav className="hidden md:flex items-center space-x-4">
               <ul className="flex items-center space-x-4 text-white text-sm">
                 <li>
@@ -79,7 +77,7 @@ export default function Header() {
         </div>
       </header>
 
-      {(token && menuOpen) && (
+      {(menuOpen) && (
         <nav className="md:hidden bg-gradient-to-b from-gray-800 to-gray-900 rounded-md shadow-md w-full md:w-auto">
           <ul className="flex flex-col items-center justify-center space-y-4 text-white text-sm">
             <li>
